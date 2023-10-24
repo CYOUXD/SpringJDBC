@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <!-- 매퍼 설정을 위해서 위의 내용은 반드시 필요함! 공홈에 있음 -->
+ 
+ <!-- 인터페이스의 구현체 -->
+<!-- mapper의 namespace 속성에 Mapper 인터페이스를 지정 --> 
+<mapper namespace="org.zerock.testmapper.TestMapper">
+	<select id="select" resultType="org.zerock.command.ScoreVO">
+		select * from score01
+	</select>
+	<select id="getTime" resultType="String"> 
+	<!-- id = 메서드 명 -->
+		select sysdate from dual
+	</select>
+	
+	<insert id="insert">
+		insert into score01(num, name, kor, eng, math)
+		values (score01_seq.nextval, #{name}, #{kor}, #{eng}, #{math})
+	</insert>
+</mapper>

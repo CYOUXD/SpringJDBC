@@ -35,7 +35,6 @@ public class BoardServiceImpl implements BoardService {
 	public void delete(String num) {
 		//System.out.println("삭제 index : "+num);
 		boardDAO.boardDelete(num);
-
 	}
 
 }

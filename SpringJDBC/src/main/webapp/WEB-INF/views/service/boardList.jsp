@@ -18,8 +18,10 @@
 				<th>비고</th>
 			</tr>
 			<c:forEach var="list" items="${boardList }" varStatus="num">
+			<!-- varStatus = forEach가 몇번 실행 됐는지 알려주는 값, 0부터 시작 -->
 				<tr>
-					<td>${num.index +1 }</td>
+					<%-- <td>${num.index +1 }</td> --%>
+					<td>${list.num }</td>
 					<td>${list.name }</td>
 					<td>${list.title }</td>
 					<td>${list.content }</td>
@@ -28,7 +30,7 @@
 					2. 삭제 후에는 목록 화면으로 리다이렉트
 					 -->
 					
-					<td><input type="button" value="삭제" onclick="location.href='boardDelete?num=${num.index}'"></td>
+					<td><input type="button" value="삭제" onclick="location.href='boardDelete?num=${list.num}'"></td>
 				</tr>
 			</c:forEach>
 		</table>
